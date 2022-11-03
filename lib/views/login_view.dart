@@ -37,7 +37,9 @@ class _LoginViewState extends State<LoginView> {
                       Align(
                         alignment: Alignment.centerLeft,
                         child: Text(
-                          _formType == FormType.login ? 'Вход' : 'Регистрация',
+                          _formType == FormType.register
+                              ? 'Регистрация'
+                              : 'Вход',
                           style: Theme.of(context).textTheme.headline4,
                           textAlign: TextAlign.start,
                         ),
@@ -53,16 +55,17 @@ class _LoginViewState extends State<LoginView> {
                   children: [
                     Text(
                       _formType == FormType.login
-                          ? 'Уже есть аккаунт?'
-                          : 'Еще нет аккаунта? ',
+                          ? 'Еще нет аккаунта? '
+                          : 'Уже есть аккаунт?',
                     ),
                     ElevatedButton(
+                      key: Key('swichBtn'),
                       child: RichText(
                         text: TextSpan(children: [
                           TextSpan(
                             text: _formType == FormType.login
-                                ? 'Войти'
-                                : 'Регистрация',
+                                ? 'Регистрация'
+                                : 'Войти',
                           )
                         ], style: Theme.of(context).textTheme.bodyText1),
                       ),
