@@ -3,7 +3,7 @@ import 'package:flutter_driver/flutter_driver.dart';
 import 'package:test/test.dart';
 
 void main() {
-  group('Login failed form main stream tests', () {
+  group('Login form main stream tests', () {
     FlutterDriver driver;
 
     setUpAll(() async {
@@ -38,7 +38,7 @@ void main() {
       await driver.tap(fieldBtn);
     });
 
-    test('Login test failed OK', () async {
+    test('Login test OK', () async {
       final success = find.text('Пароль не верный');
       expect(await driver.getText(success), 'Пароль не верный');
     });
