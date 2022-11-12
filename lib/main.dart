@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:testing/views/login_view.dart';
+import 'package:testing/views/profile_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (BuildContext context) => LoginView(),
+        '/profile_page': (BuildContext context) => ProfilePage(),
       },
     );
   }

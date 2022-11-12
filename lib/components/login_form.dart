@@ -34,6 +34,7 @@ class _LoginFormState extends State<LoginForm> {
             key: Key('fieldPhone'),
             validator: (value) {
               if (value == '') return 'Введите телефон';
+                if (value != '123456') return 'Пароль не верный';
               return null;
             },
             decoration: InputDecoration(labelText: 'Phone'),
@@ -50,6 +51,7 @@ class _LoginFormState extends State<LoginForm> {
                 setState(() {
                   successMessage = true;
                 });
+                Navigator.of(context).pushNamed('/profile_page');
               }
             },
           ),
