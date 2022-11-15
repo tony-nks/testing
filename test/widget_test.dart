@@ -25,7 +25,7 @@ void main() {
       expect(find.byKey(Key('fieldEmail')), findsOneWidget);
       expect(find.byKey(Key('fieldPhone')), findsOneWidget);
       expect(find.text('Отправить'), findsOneWidget);
-      expect(find.text('Добро пожаловать'), findsNothing);
+      expect(find.text('Пароль не верный'), findsNothing);
 
       //populate email.
       await tester.enterText(find.byKey(Key('fieldEmail')), 'test@test.ru');
@@ -40,7 +40,7 @@ void main() {
       //all OK.
       await tester.tap(find.text('Отправить'));
       await tester.pump();
-      expect(find.text('Добро пожаловать'), findsOneWidget);
+      expect(find.text('Пароль не верный'), findsOneWidget);
     });
 
     testWidgets("Login wrong fields test", (WidgetTester tester) async {
@@ -56,25 +56,25 @@ void main() {
       expect(find.byKey(Key('fieldEmail')), findsOneWidget);
       expect(find.byKey(Key('fieldPhone')), findsOneWidget);
       expect(find.text('Отправить'), findsOneWidget);
-      expect(find.text('Добро пожаловать'), findsNothing);
+      expect(find.text('Пароль не верный'), findsNothing);
 
       //empty email.
       await tester.enterText(find.byKey(Key('fieldEmail')), '');
       await tester.tap(find.text('Отправить'));
       await tester.pump();
-      expect(find.text('Добро пожаловать'), findsNothing);
+      expect(find.text('Пароль не верный'), findsNothing);
 
       //wrong email.
       await tester.enterText(find.byKey(Key('fieldEmail')), 'sdf3425gj');
       await tester.tap(find.text('Отправить'));
       await tester.pump();
-      expect(find.text('Добро пожаловать'), findsNothing);
+      expect(find.text('Пароль не верный'), findsNothing);
 
       //empty phone.
       await tester.enterText(find.byKey(Key('fieldPhone')), '');
       await tester.tap(find.text('Отправить'));
       await tester.pump();
-      expect(find.text('Добро пожаловать'), findsNothing);
+      expect(find.text('Пароль не верный'), findsNothing);
     });
 
     testWidgets("Registration main stream test", (WidgetTester tester) async {

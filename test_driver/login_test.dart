@@ -43,10 +43,5 @@ void main() {
       expect(await driver.getText(success), 'Добро пожаловать');
     });
 
-    test('New Screen loaded OK', () async {
-      final success = find.text('С возвращением!');
-      expect(await driver.getText(success), 'С возвращением!');
-    });
   });
-
 }
